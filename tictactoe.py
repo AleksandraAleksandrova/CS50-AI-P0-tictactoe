@@ -87,7 +87,10 @@ def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
-    raise NotImplementedError
+    if winner(board) is not None or (winner(board) is None and not any(EMPTY in sublist for sublist in board)):
+        return True
+    else:
+        return False
 
 
 def utility(board):
