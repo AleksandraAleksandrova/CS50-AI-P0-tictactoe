@@ -79,16 +79,26 @@ def test_utility():
     assert utility(board3) == -1
 
 def test_minimax():
-    # Add your tests for minimax function here
-    pass
+    board1 = [[EMPTY, EMPTY, EMPTY],
+              [EMPTY, EMPTY, EMPTY],
+              [EMPTY, EMPTY, EMPTY]]
+    board2 = [[X, O, X],
+              [O, X, EMPTY],
+              [X, O, EMPTY]]
+    assert minimax(board1) == (0, 0) 
+    assert minimax(board2) == None
 
 def test_max_value():
-    # Add your tests for max_value function here
-    pass
+    board = [[X, O, X],
+             [O, X, O],
+             [X, O, EMPTY]]
+    assert max_value(board) == 1
 
 def test_min_value():
-    # Add your tests for min_value function here
-    pass
+    board = [[X, O, X],
+             [X, O, EMPTY],
+             [EMPTY, EMPTY, EMPTY]]
+    assert min_value(board) == -1
 
 if __name__ == "__main__":
     pytest.main()
